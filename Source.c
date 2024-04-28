@@ -131,8 +131,6 @@ int task7()
 	}
 }
 
-//number with 0 at the end
-//compute AVG without last zero
 int task13()
 {
 	if (N)
