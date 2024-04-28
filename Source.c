@@ -1,11 +1,21 @@
 ﻿#include <stdio.h>
 
-unsigned int N;
+unsigned int N = 0;
+int i = 0;
+int avg = 0;
+float res = 0;
 int d;
 
 int main()
 {
 	run();
+
+	//int A = 12345;
+	//printf("%d\n", A);
+
+	//A /= 10;
+	//printf("%d\n", A);
+
 }
 
 int inputN()
@@ -38,6 +48,23 @@ int run()
 		inputN();
 		printf("\n");
 		task7();
+		break;
+	case 13:
+		inputN();
+		avg = 0;
+		res = 0;
+		i = 0;
+		if (N % 10 != 0)
+		{
+			puts("number should end with 0");
+			break;
+		}
+		else
+		{
+			N /= 10;
+		}
+		printf("\n");
+		task13();
 		break;
 	case 0:
 		puts("exit");
@@ -104,7 +131,21 @@ int task7()
 	}
 }
 
+//number with 0 at the end
+//compute AVG without last zero
 int task13()
 {
-
+	if (N)
+	{
+		avg += N % 10;
+		N /= 10;
+		i++;
+		task13();
+	}
+	else
+	{
+		res = (float)avg / (float)i;
+		printf("%.2f\n", res);
+		return 0;
+	}
 }
