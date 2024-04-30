@@ -14,6 +14,16 @@ int inputN()
 {
 	puts("\nInput a natural number: ");
 	scanf("%u", &N);
+	checkN();
+}
+
+int checkN()
+{
+	if (N <= 0)
+	{
+		puts("wrong number");
+		inputN();
+	}
 }
 
 int run()
