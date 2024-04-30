@@ -10,8 +10,8 @@ int main()
 
 int inputN()
 {
-	puts("\nInput a natural umber: ");
-	if (scanf("%d", &N) != NULL)
+	puts("\nInput a natural number: ");
+	scanf("%d", &N);
 	checkN();
 }
 
