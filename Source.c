@@ -11,8 +11,31 @@ int main()
 int inputN()
 {
 	puts("\nInput a natural number: ");
+	
 	scanf("%d", &N);
+
+	if (getchar() != '\n')
+	{
+		//сообщение об ошибке
+		printf("error\n");
+
+		freeBuffer();
+
+		inputN(); // Повторяем ввод заново
+	}
+
 	checkN();
+}
+
+// Очистка буфера ввода
+int freeBuffer()
+{
+	if (getchar() != '\n')
+	{
+		freeBuffer();
+	}
+	
+	return 0;
 }
 
 int checkN()
